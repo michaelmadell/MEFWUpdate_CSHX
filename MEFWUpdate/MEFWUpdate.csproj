@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>MEFWUpdate</AssemblyName>
+    <RootNamespace>MEFWUpdate</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <Deterministic>true</Deterministic>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <AssemblyVersion>20.26.1.1</AssemblyVersion>
+    <FileVersion>20.26.6.1</FileVersion>
+    <Version>20.26.1.1</Version>
+    <Company>Amulet Hotkey Ltd</Company>
+    <Authors>Amulet Hotkey Ltd</Authors>
+    <Title>Update Package for the Intel Converged Security Management Engine Firmware on a CoreStation HX3000 Node</Title>
+    <Description>Update Package for the Intel Converged Security Management Engine Firmware on a CoreStation HX3000 Node
+Version 19.0.11.2289</Description>
+    <Copyright>Amulet Hotkey Ltd 2026</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Firmware assets embedded at build time.
+       Place FWUpdLcl64.exe and fw_update.bin next to this .csproj before building. -->
+  <ItemGroup>
+    <EmbeddedResource Include="FWUpdLcl64.exe">
+      <LogicalName>FWUpdLcl64.exe</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fw_update.bin">
+      <LogicalName>fw_update.bin</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

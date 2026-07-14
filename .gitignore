@@ -1,0 +1,13 @@
+# Build output
+MEFWUpdate/bin/
+MEFWUpdate/obj/
+dist/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Firmware assets (sensitive - supply at build time, never commit)
+MEFWUpdate/FWUpdLcl64.exe
+MEFWUpdate/fw_update.bin
